@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: store-federation-manifest
+data:
+  module-federation.manifest.json: |
+    {{ toJson .Values.store.federationManifest | nindent 4 }}

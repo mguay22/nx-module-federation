@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: store
+  labels:
+    app: store
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: store
+  template:
+    metadata:
+      labels:
+        app: store
+    spec:
+      containers:
+        - name: store
+          image: mguay/store:latest
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: federation-manifest-volume
+              mountPath: /usr/share/nginx/html/config
+          imagePullPolicy: Always
+      volumes:
+        - name: federation-manifest-volume
+          configMap:
+            name: store-federation-manifest

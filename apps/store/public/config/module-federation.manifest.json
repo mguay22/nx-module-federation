@@ -1,0 +1,4 @@
+{
+  "products": "http://localhost:4201/mf-manifest.json",
+  "checkout": "http://localhost:4202/mf-manifest.json"
+}

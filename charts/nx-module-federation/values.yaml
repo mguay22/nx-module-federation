@@ -1,0 +1,4 @@
+store:
+  federationManifest:
+    products: http://nx-module-federation.local/products/mf-manifest.json
+    checkout: http://nx-module-federation.local/checkout/mf-manifest.json
